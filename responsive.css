@@ -1,0 +1,467 @@
+/*==========================================================
+    RESPONSIVE.CSS
+    Lifetime Events
+==========================================================*/
+
+
+/*==========================================================
+Large Desktop
+==========================================================*/
+
+@media(max-width:1400px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Laptop
+==========================================================*/
+
+@media(max-width:1200px){
+
+    h1{
+
+        font-size:3.8rem;
+
+    }
+
+    h2{
+
+        font-size:2.6rem;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:25px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Tablet Landscape
+==========================================================*/
+
+@media(max-width:992px){
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .grid-2{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .about-image{
+
+        order:1;
+
+    }
+
+    .about-content{
+
+        order:2;
+
+        text-align:center;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .counter-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hero-content{
+
+        max-width:90%;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Tablet
+==========================================================*/
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:3rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    h3{
+
+        font-size:1.7rem;
+
+    }
+
+    p{
+
+        font-size:15px;
+
+    }
+
+    /* Navigation */
+
+    .menu-btn{
+
+        display:block;
+
+        z-index:1001;
+
+    }
+
+    nav{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        background:#111;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        transition:.4s;
+
+        box-shadow:-10px 0 25px rgba(0,0,0,.4);
+
+    }
+
+    nav.active{
+
+        right:0;
+
+    }
+
+    nav ul{
+
+        flex-direction:column;
+
+        gap:30px;
+
+        text-align:center;
+
+    }
+
+    nav ul li a{
+
+        font-size:18px;
+
+    }
+
+    /* Hero */
+
+    #hero{
+
+        height:90vh;
+
+    }
+
+    .hero-content h3{
+
+        font-size:1rem;
+
+        letter-spacing:3px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+    /* Gallery */
+
+    .gallery-grid{
+
+        gap:15px;
+
+    }
+
+    .gallery-grid img{
+
+        height:250px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Mobile Landscape
+==========================================================*/
+
+@media(max-width:576px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    h1{
+
+        font-size:2.5rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    h3{
+
+        font-size:1.5rem;
+
+    }
+
+    h5{
+
+        font-size:.9rem;
+
+    }
+
+    .hero-content{
+
+        padding:15px;
+
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+
+    }
+
+    .btn{
+
+        padding:14px 30px;
+
+        font-size:14px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid img{
+
+        height:300px;
+
+    }
+
+    .counter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .testimonial{
+
+        padding:30px 20px;
+
+    }
+
+    .testimonial p{
+
+        font-size:16px;
+
+    }
+
+    .social{
+
+        gap:12px;
+
+    }
+
+    .social a{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Small Mobile
+==========================================================*/
+
+@media(max-width:420px){
+
+    h1{
+
+        font-size:2.2rem;
+
+        line-height:1.2;
+
+    }
+
+    h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .hero-content h3{
+
+        letter-spacing:2px;
+
+    }
+
+    .hero-content p{
+
+        font-size:14px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .gallery-grid img{
+
+        height:220px;
+
+    }
+
+    #topBtn{
+
+        width:45px;
+
+        height:45px;
+
+        right:15px;
+
+        bottom:15px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+Extra Small Devices
+==========================================================*/
+
+@media(max-width:320px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .logo a{
+
+        font-size:1.5rem;
+
+    }
+
+    nav{
+
+        width:240px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .map iframe{
+
+        height:280px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+END OF RESPONSIVE.CSS
+==========================================================*/
