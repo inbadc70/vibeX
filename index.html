@@ -374,20 +374,66 @@
 
             <form>
 
-                <input type="text" placeholder="Full Name">
+                <input type="text" name="fullname" placeholder="Full Name">
 
-                <input type="email" placeholder="Email Address">
+                <input type="email" name="email" placeholder="Email Address">
 
-                <input type="tel" placeholder="Phone Number">
+                <input type="tel" name="phone" placeholder="Phone Number">
 
                 <textarea rows="6"
-                    placeholder="Tell us about your event"></textarea>
+                    name="message" placeholder="Tell us about your event"></textarea>
 
                 <button class="btn">
                     Send Message
                 </button>
 
             </form>
+
+            <script>
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const data = {
+            fullName: form.fullName.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            message: form.message.value,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        statusEl.style.display = 'none';
+
+        try {
+            const res = await fetch('/api/send-mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const result = await res.json();
+
+            if (res.ok && result.success) {
+                statusEl.textContent = 'Thanks! Your message has been sent.';
+                statusEl.style.color = 'green';
+                form.reset();
+            } else {
+                throw new Error(result.error || 'Something went wrong');
+            }
+        } catch (err) {
+            statusEl.textContent = 'Failed to send message. Please try again.';
+            statusEl.style.color = 'red';
+        } finally {
+            statusEl.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
+    });
+</script>
 
         </div>
 
